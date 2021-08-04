@@ -14,31 +14,17 @@
         android:layout_height="match_parent"
         tools:context=".presentation.activity.MainActivity">
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/main_title"
-            android:textSize="20sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
-
-        <TextView
-            android:id="@+id/tv_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="설정"
-            android:textSize="20sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+        <include
+            android:id="@+id/header"
+            layout="@layout/header"
+            />
 
         <TextView
             android:id="@+id/tv_personnel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_personnel"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/header"
             app:layout_constraintLeft_toLeftOf="parent"/>
 
         <TextView
@@ -46,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/header"
             app:layout_constraintLeft_toRightOf="@id/tv_personnel"/>
 
         <TextView
@@ -54,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_winning"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/header"
             app:layout_constraintLeft_toRightOf="@id/tv_personnel_num"/>
 
         <TextView
@@ -62,29 +48,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/header"
             app:layout_constraintLeft_toRightOf="@id/tv_winning"/>
-        <CheckBox
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/main_shadow_mode"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
-            app:layout_constraintLeft_toRightOf="@id/tv_winning_num"/>
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            >
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/main_shadow_mode"
+                app:layout_constraintTop_toBottomOf="@id/header"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </LinearLayout>
 
 
-        <TextView
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/main_reset"
+            app:layout_constraintWidth_percent="0.5"
             app:layout_constraintBottom_toTopOf="@id/btn_all_start"
             app:layout_constraintLeft_toLeftOf="parent"/>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btn_result"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/main_result_list"
+            app:layout_constraintWidth_percent="0.5"
             app:layout_constraintBottom_toTopOf="@id/btn_all_start"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            />
 
 
 

@@ -12,6 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GhostLegGame">
+
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <!-- Real AdMob app ID: ca-app-pub-2385175541708344~7881493597 -->
+        <!-- Real AdMob 배너 ID: ca-app-pub-2385175541708344/6199363378 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+
         <activity android:name=".presentation.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

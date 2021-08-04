@@ -25,7 +25,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         /**
         * 뷰모델에 라이브데이터랑 코인 연결하던중이였음
          *
