@@ -16,56 +16,70 @@
 
         <include
             android:id="@+id/header"
-            layout="@layout/header"
-            />
+            layout="@layout/header" />
 
         <TextView
             android:id="@+id/tv_personnel"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/text_default"
             android:text="@string/main_personnel"
+            android:gravity="center"
+            app:layout_constraintWidth_percent="0.2"
             app:layout_constraintTop_toBottomOf="@id/header"
-            app:layout_constraintLeft_toLeftOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_shadow_mode"/>
 
-        <TextView
-            android:id="@+id/tv_personnel_num"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/sp_personnel_num"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="2"
+            app:layout_constraintWidth_percent="0.1"
             app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintBottom_toBottomOf="@id/tv_shadow_mode"
             app:layout_constraintLeft_toRightOf="@id/tv_personnel"/>
 
         <TextView
             android:id="@+id/tv_winning"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/text_default"
             android:text="@string/main_winning"
+            android:gravity="center"
+            app:layout_constraintWidth_percent="0.2"
             app:layout_constraintTop_toBottomOf="@id/header"
-            app:layout_constraintLeft_toRightOf="@id/tv_personnel_num"/>
+            app:layout_constraintBottom_toBottomOf="@id/tv_shadow_mode"
+            app:layout_constraintLeft_toRightOf="@id/sp_personnel_num"/>
 
-        <TextView
-            android:id="@+id/tv_winning_num"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/sp_winning_num"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="2"
+            app:layout_constraintWidth_percent="0.1"
             app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintBottom_toBottomOf="@id/tv_shadow_mode"
             app:layout_constraintLeft_toRightOf="@id/tv_winning"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <CheckBox
+            android:id="@+id/cb_shadow_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintTop_toTopOf="@id/tv_shadow_mode"
+            app:layout_constraintBottom_toBottomOf="@id/tv_shadow_mode"
+            app:layout_constraintRight_toLeftOf="@id/tv_shadow_mode"
+            />
+
+        <TextView
+            android:id="@+id/tv_shadow_mode"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            style="@style/text_default"
+            android:text="@string/main_shadow_mode"
+            android:gravity="center"
+            app:layout_constraintWidth_percent="0.2"
             app:layout_constraintTop_toBottomOf="@id/header"
-            >
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/main_shadow_mode"
-                app:layout_constraintTop_toBottomOf="@id/header"
-                app:layout_constraintRight_toRightOf="parent" />
-
-        </LinearLayout>
-
+            app:layout_constraintRight_toRightOf="parent" />
 
         <Button
             android:id="@+id/btn_reset"
@@ -86,8 +100,6 @@
             app:layout_constraintRight_toRightOf="parent"
             />
 
-
-
         <Button
             android:id="@+id/btn_all_start"
             android:layout_width="match_parent"
@@ -95,6 +107,7 @@
             android:text="@string/main_all_start"
             app:layout_constraintBottom_toTopOf="@id/ad"
             />
+
         <TextView
             android:id="@+id/ad"
             android:layout_width="match_parent"
