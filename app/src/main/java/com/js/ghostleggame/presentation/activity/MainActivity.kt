@@ -1,6 +1,7 @@
 package com.js.ghostleggame.presentation.activity
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -29,37 +30,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
 
         when(v){
             binding.tvPersonnelNum -> {
-                var dialog = Dialog(this)
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-                dialog.setContentView(R.layout.number_picker_dialog)
-//                var _binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.number_picker_dialog, null, false);
-
-                dialog.show()
-
-//                val d = Dialog(this@MainActivity)
-//                d.setTitle("NumberPicker")
-//                d.setContentView(R.layout.number_picker_dialog)
-////                val b1: Button = d.findViewById<View>(R.id.button1) as Button
-////                val b2: Button = d.findViewById<View>(R.id.button2) as Button
-//                var b1 =
-//                val np =
-//
-//                np.maxValue = 100
-//                np.minValue = 0
-//                np.wrapSelectorWheel = false
-//                np.setOnValueChangedListener(this)
-//                b1.setOnClickListener(object : View.OnClickListener {
-//                    fun onClick(v: View?) {
-//                        tv.setText(np.value.toString())
-//                        d.dismiss()
-//                    }
-//                })
-//                b2.setOnClickListener(object : View.OnClickListener {
-//                    fun onClick(v: View?) {
-//                        d.dismiss()
-//                    }
-//                })
-//                d.show()
+//                var dialog = SelectDialog(this)
+//                dialog.show()
 
 
                 Log.e(TAG,"Test")
@@ -67,6 +39,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
 
             binding.tvWinningNum -> {
                 Log.e(TAG,"Test2")
+            }
+
+            binding.btnReset -> {
+
+            }
+
+            binding.btnResult -> {
+                startActivity(Intent(this, ResultActivity::class.java))
+
+            }
+
+            binding.btnAllStart -> {
+
             }
 
         }
@@ -81,6 +66,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
         * */
         binding.tvPersonnelNum.setOnClickListener(this)
         binding.tvWinningNum.setOnClickListener(this)
+        binding.btnReset.setOnClickListener(this)
+        binding.btnResult.setOnClickListener(this)
+        binding.btnAllStart.setOnClickListener(this)
 
         /**
         * 뷰모델에 라이브데이터랑 코인 연결하던중이였음

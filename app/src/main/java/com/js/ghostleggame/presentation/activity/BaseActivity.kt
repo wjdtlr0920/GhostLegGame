@@ -19,7 +19,7 @@ abstract class BaseActivity< B : ViewDataBinding>(@LayoutRes private val layoutR
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, layoutResId)
 
-        ctx = applicationContext
+        ctx = baseContext
     }
 
     override fun onDestroy() {
