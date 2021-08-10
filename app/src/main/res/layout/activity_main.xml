@@ -15,7 +15,6 @@
         tools:context=".presentation.activity.MainActivity">
 
         <include
-            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/header"
             layout="@layout/header" />
 
