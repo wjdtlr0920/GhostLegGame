@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">GhostLegGame</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="main_title">사다리 타기</string>
+    <string name="main_title">사다리타기</string>
+    <string name="result_title">결과화면</string>
     <string name="main_personnel">참여인원</string>
     <string name="main_winning">당첨인원</string>
     <string name="main_shadow_mode">그림자모드</string>
