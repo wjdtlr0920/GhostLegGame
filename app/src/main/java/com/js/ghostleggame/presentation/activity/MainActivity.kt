@@ -93,8 +93,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
             }
 
             binding.tvPersonnelNum -> {
-                var dialog = SelectDialog(this, object: BaseDialog.CallBack{
-
+                var dialog = SelectDialog(this,binding.tvPersonnelNum.text.toString().toInt(), SelectDialog.Type.PERSONNEL, object: BaseDialog.CallBack{
                     override fun onOk(personnel: Int) {
                         setPersonnel(personnel, SelectDialog.Type.PERSONNEL)
                     }
@@ -107,8 +106,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
             }
 
             binding.tvWinningNum -> {
-                var dialog = SelectDialog(this, object: BaseDialog.CallBack{
-
+                var dialog = SelectDialog(this, binding.tvWinningNum.text.toString().toInt(), SelectDialog.Type.WINNER,object: BaseDialog.CallBack{
                     override fun onOk(personnel: Int) {
                         setPersonnel(personnel, SelectDialog.Type.WINNER)
                     }
