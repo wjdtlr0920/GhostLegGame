@@ -14,6 +14,8 @@ import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.js.ghostleggame.R
 import com.js.ghostleggame.databinding.ActivityMainBinding
+import com.js.ghostleggame.presentation.dialog.BaseDialog
+import com.js.ghostleggame.presentation.dialog.SelectDialog
 import com.js.ghostleggame.repo.DatabaseWithRoom
 import com.js.ghostleggame.repo.MySharedPreferences
 import com.js.ghostleggame.viewmodel.MainViewModel
@@ -87,20 +89,33 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
                 finish()
             }
             binding.header.setting -> {
-                var dialog = Dialog(this)
-                dialog.show()
+
             }
 
-
             binding.tvPersonnelNum -> {
-//                var dialog = SelectDialog(this)
-//                dialog.show()
+                var dialog = SelectDialog(this, object: BaseDialog.CallBack{
 
+                    override fun onOk(personnel: Int) {
+                        setPersonnel(personnel, SelectDialog.Type.PERSONNEL)
+                    }
+                    override fun onCancel() {
+                    }
+                })
+                dialog.show()
 
                 Log.e(TAG,"Test")
             }
 
             binding.tvWinningNum -> {
+                var dialog = SelectDialog(this, object: BaseDialog.CallBack{
+
+                    override fun onOk(personnel: Int) {
+                        setPersonnel(personnel, SelectDialog.Type.WINNER)
+                    }
+                    override fun onCancel() {
+                    }
+                })
+                dialog.show()
                 Log.e(TAG,"Test2")
             }
 
@@ -139,6 +154,17 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
         binding.header.title.text = getString(R.string.main_title)
         binding.header.back.isVisible = false
 
+    }
+
+    fun setPersonnel(personnel: Int, type: SelectDialog.Type){
+        when(type){
+            SelectDialog.Type.PERSONNEL -> {
+                binding.tvPersonnelNum.text = personnel.toString()
+            }
+            SelectDialog.Type.WINNER -> {
+                binding.tvWinningNum.text = personnel.toString()
+            }
+        }
     }
 
 
