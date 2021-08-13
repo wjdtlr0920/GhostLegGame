@@ -13,6 +13,7 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.js.ghostleggame.R
+import com.js.ghostleggame.common.Util.toastMessage
 import com.js.ghostleggame.databinding.ActivityMainBinding
 import com.js.ghostleggame.presentation.dialog.BaseDialog
 import com.js.ghostleggame.presentation.dialog.SelectDialog
@@ -108,7 +109,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
             binding.tvWinningNum -> {
                 var dialog = SelectDialog(this, binding.tvWinningNum.text.toString().toInt(), SelectDialog.Type.WINNER,object: BaseDialog.CallBack{
                     override fun onOk(personnel: Int) {
-                        setPersonnel(personnel, SelectDialog.Type.WINNER)
+                        if(personnel <= binding.tvPersonnelNum.text.toString().toInt())
+                            setPersonnel(personnel, SelectDialog.Type.WINNER)
+                        else
+                            toastMessage(this@MainActivity,getString(R.string.main_not_winner_num))
                     }
                     override fun onCancel() {
                     }

@@ -29,6 +29,7 @@
                     />
                 <Switch
                     style="@style/switch_setting"
+                    android:id="@+id/sw_dark_mode"
                     />
             </LinearLayout>
             <ImageView
@@ -45,6 +46,7 @@
                     android:text="@string/setting_sound"
                     />
                 <Switch
+                    android:id="@+id/sw_sound"
                     style="@style/switch_setting"
                     />
             </LinearLayout>
@@ -62,6 +64,7 @@
                     android:text="@string/setting_vibration"
                     />
                 <Switch
+                    android:id="@+id/sw_vibration"
                     style="@style/switch_setting"
                     />
             </LinearLayout>
@@ -79,8 +82,27 @@
                     android:text="@string/setting_game_speed"
                     />
                 <SeekBar
+                    android:id="@+id/skb_game_speed"
                     style="@style/seekbar_setting"/>
             </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/solid_gray"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="4">
+                <TextView
+                    style="@style/textview_setting_horizontal"
+                    android:text="@string/setting_appear_percent"
+                    />
+                <SeekBar
+                    android:id="@+id/skb_appear_percent"
+                    style="@style/seekbar_setting"/>
+            </LinearLayout>
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

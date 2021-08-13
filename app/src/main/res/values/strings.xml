@@ -9,14 +9,18 @@
     <string name="main_personnel">참여인원</string>
     <string name="main_winning">당첨인원</string>
     <string name="main_shadow_mode">그림자모드</string>
+    <string name="main_refresh">다시그리기</string>
     <string name="main_reset">초기화</string>
     <string name="main_result_list">결과목록</string>
     <string name="main_all_start">전체 시작</string>
+
+    <string name="main_not_winner_num">참여인원보다 클 수 없습니다</string>
 
     <string name="setting_dark_mode">다크모드</string>
     <string name="setting_sound">소리</string>
     <string name="setting_vibration">진동</string>
     <string name="setting_game_speed">게임속도</string>
+    <string name="setting_appear_percent">사다리빈도</string>
 
     <string name="min_personnel">2</string>
     <string name="max_personnel">8</string>

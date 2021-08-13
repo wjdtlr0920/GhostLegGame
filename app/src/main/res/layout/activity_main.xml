@@ -89,20 +89,29 @@
             app:layout_constraintRight_toRightOf="parent" />
 
         <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/main_refresh"
+            app:layout_constraintWidth_percent="0.33333"
+            app:layout_constraintBottom_toTopOf="@id/btn_all_start"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <Button
             android:id="@+id/btn_reset"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/main_reset"
-            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintWidth_percent="0.33334"
             app:layout_constraintBottom_toTopOf="@id/btn_all_start"
-            app:layout_constraintLeft_toLeftOf="parent"/>
+            app:layout_constraintLeft_toRightOf="@id/btn_refresh"/>
 
         <Button
             android:id="@+id/btn_result"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/main_result_list"
-            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintWidth_percent="0.33333"
             app:layout_constraintBottom_toTopOf="@id/btn_all_start"
             app:layout_constraintRight_toRightOf="parent"
             />

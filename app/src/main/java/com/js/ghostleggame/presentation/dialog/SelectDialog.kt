@@ -6,7 +6,7 @@ import android.view.View
 import com.js.ghostleggame.R
 import com.js.ghostleggame.databinding.DialogNumberPickerBinding
 
-class SelectDialog(context: Context,val startNum: Int,val type: Type, private val callback: CallBack) : BaseDialog<DialogNumberPickerBinding>(context, R.layout.dialog_number_picker), View.OnClickListener {
+class SelectDialog(context: Context, private val startNum: Int, val type: Type, private val callback: CallBack) : BaseDialog<DialogNumberPickerBinding>(context, R.layout.dialog_number_picker), View.OnClickListener {
 
     enum class Type{PERSONNEL, WINNER}
 
@@ -37,10 +37,10 @@ class SelectDialog(context: Context,val startNum: Int,val type: Type, private va
 
         when(v){
             binding.imgUp -> {
-                binding.npPersonnel.value += 1
+                binding.npPersonnel.value -= 1
             }
             binding.imgDown -> {
-                binding.npPersonnel.value -= 1
+                binding.npPersonnel.value += 1
             }
             binding.btnOk -> {
                 dismiss()
