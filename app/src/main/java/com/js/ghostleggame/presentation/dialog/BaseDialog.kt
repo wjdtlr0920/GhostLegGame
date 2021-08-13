@@ -10,7 +10,7 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
-abstract class BaseDialog< B : ViewDataBinding>(private val ctx: Context, @LayoutRes private val layoutResId: Int) : Dialog(ctx) {
+abstract class BaseDialog< B : ViewDataBinding>(private val ctx: Context, @LayoutRes private val layoutResId: Int, val style: Int? = null) : Dialog(ctx, android.R.style.Theme_Translucent_NoTitleBar) {
 
     interface CallBack{
         fun onOk(personnel: Int)
@@ -23,6 +23,8 @@ abstract class BaseDialog< B : ViewDataBinding>(private val ctx: Context, @Layou
         super.onCreate(savedInstanceState)
 //        binding = DataBindingUtil.setContentView(context as Activity, layoutResId)
         binding = DataBindingUtil.inflate(LayoutInflater.from(ctx), layoutResId, null, false)
+        window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        window?.setBackgroundDrawableResource(android.R.color.transparent)
         setContentView(binding.root)
 
 

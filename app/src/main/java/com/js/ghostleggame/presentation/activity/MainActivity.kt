@@ -16,6 +16,7 @@ import com.js.ghostleggame.R
 import com.js.ghostleggame.databinding.ActivityMainBinding
 import com.js.ghostleggame.presentation.dialog.BaseDialog
 import com.js.ghostleggame.presentation.dialog.SelectDialog
+import com.js.ghostleggame.presentation.dialog.SettingDialog
 import com.js.ghostleggame.repo.DatabaseWithRoom
 import com.js.ghostleggame.repo.MySharedPreferences
 import com.js.ghostleggame.viewmodel.MainViewModel
@@ -89,7 +90,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
                 finish()
             }
             binding.header.setting -> {
-
+                var dialog = SettingDialog(this)
+                dialog.show()
             }
 
             binding.tvPersonnelNum -> {
@@ -101,8 +103,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
                     }
                 })
                 dialog.show()
-
-                Log.e(TAG,"Test")
             }
 
             binding.tvWinningNum -> {
@@ -114,7 +114,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
                     }
                 })
                 dialog.show()
-                Log.e(TAG,"Test2")
             }
 
             binding.btnReset -> {
