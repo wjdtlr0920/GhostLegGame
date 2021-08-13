@@ -11,4 +11,44 @@
         <item name = "android:textSize">20sp</item>
         <item name = "android:textStyle">bold</item>
     </style>
+
+
+    <!--  뷰 테두리  -->
+    <style name="border_black">
+        <item name="background">@drawable/border_gray</item>
+    </style>
+    <!--   텍스트뷰   -->
+    <style name="textview_setting_vertical" parent="text_default">
+        <item name="android:layout_weight">2</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+    <style name="textview_setting_horizontal" parent="text_default">
+        <item name="android:layout_weight">2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <!--  스위치  -->
+    <style name="switch_setting">
+        <item name="android:layout_weight">2</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center_vertical|right</item>
+    </style>
+
+    <!--  시크바  -->
+    <style name="seekbar_setting">
+        <item name="android:layout_weight">2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
 </resources>

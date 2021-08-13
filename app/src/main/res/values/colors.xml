@@ -9,6 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="dialog_background_transparent">#66000000</color>
-    <color name="light_gray">#FFF0F0F0</color>
+    <color name="light_gray">#FFE0E0E0</color>
 
 </resources>
