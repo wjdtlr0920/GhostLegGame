@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.widget.Button
+import android.widget.CompoundButton
 import android.widget.NumberPicker
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
@@ -25,7 +26,7 @@ import com.js.ghostleggame.viewmodel.MainViewModel.Companion.TAG
 import org.koin.android.ext.android.inject
 
 
-class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), View.OnClickListener {
+class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private val mRoomDB: DatabaseWithRoom by inject()
     private val mPrefs: MySharedPreferences by inject()
@@ -44,6 +45,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
         binding.btnReset.setOnClickListener(this)
         binding.btnResult.setOnClickListener(this)
         binding.btnAllStart.setOnClickListener(this)
+        binding.cbShadowMode.setOnCheckedChangeListener(this)
 
         binding.header.setting.setOnClickListener(this)
 
@@ -132,9 +134,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
             binding.btnAllStart -> {
 
             }
-
         }
+    }
 
+    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+        when(buttonView){
+            binding.cbShadowMode -> {
+                binding.viewShadowMode.isVisible = isChecked
+            }
+        }
     }
 
 

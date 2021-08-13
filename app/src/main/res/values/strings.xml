@@ -6,8 +6,8 @@
     <string name="result_title">결과화면</string>
     <string name="setting_title">설정화면</string>
 
-    <string name="main_personnel">참여인원</string>
-    <string name="main_winning">당첨인원</string>
+    <string name="main_personnel">참여인원 : </string>
+    <string name="main_winning">당첨인원 : </string>
     <string name="main_shadow_mode">그림자모드</string>
     <string name="main_refresh">다시그리기</string>
     <string name="main_reset">초기화</string>
