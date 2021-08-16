@@ -91,6 +91,23 @@
             app:layout_constraintTop_toBottomOf="@id/header"
             app:layout_constraintRight_toRightOf="parent" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tv_shadow_mode"
+            app:layout_constraintBottom_toTopOf="@id/btn_result">
+            <RelativeLayout
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/icon_bear"/>
+            </RelativeLayout>
+        </LinearLayout>
+
         <View
             android:id="@+id/view_shadow_mode"
             android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewTreeObserver
 import android.view.Window
 import android.widget.Button
 import android.widget.CompoundButton
@@ -32,10 +33,43 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
     private val mPrefs: MySharedPreferences by inject()
     private val model: MainViewModel by viewModels()
 
+    private val map = arrayListOf<ArrayList<Int>>()
+
+    private var mapWidth = 0
+    private var mapHeight = 0
+
+    private var viewWidth = 0
+    private var viewHeight = 0
+
+    private var line = 0
+
+
+    // 뷰 길이 가져오기
+    private var mapTreeObserver = ViewTreeObserver.OnGlobalLayoutListener {
+        mapWidth = binding.map.width
+        mapHeight = binding.map.height
+
+        viewWidth = binding.map.height / 8
+        viewHeight = binding.map.height
+
+        Log.d("mapSize", "$mapWidth $mapHeight")
+        Log.d("viewSize", "$viewWidth $viewHeight")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+        // 맵 크기 가져오기
+        binding.map.viewTreeObserver.addOnGlobalLayoutListener(mapTreeObserver)
+
+        // 맵 처음 그리기
+        for (i in 0 until 8) {
+            map.add(arrayListOf(0, 0, 0, 0, 0, 0, 0, 0))
+        }
+
+        //맵 체크해보기
+        mapCheck()
         /**
          * 초기 값 세팅
          * */
@@ -46,7 +80,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
         binding.btnResult.setOnClickListener(this)
         binding.btnAllStart.setOnClickListener(this)
         binding.cbShadowMode.setOnCheckedChangeListener(this)
-
         binding.header.setting.setOnClickListener(this)
 
         setHeader()
@@ -173,6 +206,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
             SelectDialog.Type.WINNER -> {
                 binding.tvWinningNum.text = personnel.toString()
             }
+        }
+    }
+
+    fun mapCheck(){
+        map.forEach{x ->
+            x.forEach {  y -> print(y) }
+            println()
         }
     }
 
