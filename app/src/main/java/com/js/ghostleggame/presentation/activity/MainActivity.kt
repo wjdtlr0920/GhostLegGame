@@ -1,19 +1,13 @@
 package com.js.ghostleggame.presentation.activity
 
-import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewTreeObserver
-import android.view.Window
-import android.widget.Button
 import android.widget.CompoundButton
-import android.widget.NumberPicker
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
-import androidx.databinding.DataBindingUtil
 import com.js.ghostleggame.R
 import com.js.ghostleggame.common.Util.toastMessage
 import com.js.ghostleggame.databinding.ActivityMainBinding
@@ -23,7 +17,6 @@ import com.js.ghostleggame.presentation.dialog.SettingDialog
 import com.js.ghostleggame.repo.DatabaseWithRoom
 import com.js.ghostleggame.repo.MySharedPreferences
 import com.js.ghostleggame.viewmodel.MainViewModel
-import com.js.ghostleggame.viewmodel.MainViewModel.Companion.TAG
 import org.koin.android.ext.android.inject
 
 
@@ -209,11 +202,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), 
         }
     }
 
-    fun mapCheck(){
+    private fun mapCheck(){
         map.forEach{x ->
             x.forEach {  y -> print(y) }
             println()
         }
+    }
+
+    private fun drawPlayer(){
+
     }
 
 

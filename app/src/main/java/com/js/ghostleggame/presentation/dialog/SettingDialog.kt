@@ -1,11 +1,13 @@
 package com.js.ghostleggame.presentation.dialog
 
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.CompoundButton
 import android.widget.SeekBar
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import com.js.ghostleggame.R
 import com.js.ghostleggame.databinding.DialogSettingBinding
@@ -42,8 +44,15 @@ class SettingDialog(context: Context) : BaseDialog<DialogSettingBinding>(context
     override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
         when(buttonView){
             binding.swDarkMode -> {
-                dismiss()
-                // todo 다이얼로그 띄어서 앱 다시 시작해야하는데 물어볼까?
+                val alertDialogBuilder = AlertDialog.Builder(context)
+                alertDialogBuilder.setTitle("123456")
+                alertDialogBuilder.setMessage("123456")
+                alertDialogBuilder.setPositiveButton("OK", null)
+                alertDialogBuilder.setNegativeButton("Cancel",null);
+
+
+                val alertDialog = alertDialogBuilder.create()
+                alertDialog.show()
             }
             binding.swSound -> {
                 dismiss()
@@ -51,7 +60,7 @@ class SettingDialog(context: Context) : BaseDialog<DialogSettingBinding>(context
             }
             binding.swVibration -> {
                 dismiss()
-                // todo 쉐어드프리퍼런스에 진동값 저장
+                // todo 쉐어드프리퍼런스에 진동 값 저장
             }
         }
     }

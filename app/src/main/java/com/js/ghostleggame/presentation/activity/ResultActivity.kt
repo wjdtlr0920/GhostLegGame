@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.js.ghostleggame.R
 import com.js.ghostleggame.databinding.ActivityResultBinding
 import com.js.ghostleggame.presentation.adapter.ResultAdapter
+import com.js.ghostleggame.presentation.dialog.SettingDialog
 import com.js.ghostleggame.viewmodel.MainViewModel
 
 
@@ -35,13 +36,12 @@ class ResultActivity : BaseActivity<ActivityResultBinding>(R.layout.activity_res
 
 
     override fun onClick(v: View?) {
-
         when(v) {
             binding.header.back -> {
                 finish()
             }
             binding.header.setting -> {
-                var dialog = Dialog(this)
+                var dialog = SettingDialog(this)
                 dialog.show()
             }
         }
