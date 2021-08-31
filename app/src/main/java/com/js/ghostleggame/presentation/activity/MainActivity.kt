@@ -22,7 +22,7 @@ import org.koin.android.ext.android.inject
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
-    //테스트중
+    //테스트gt
     private val mRoomDB: DatabaseWithRoom by inject()
     private val mPrefs: MySharedPreferences by inject()
     private val model: MainViewModel by viewModels()
