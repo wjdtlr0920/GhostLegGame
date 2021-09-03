@@ -26,7 +26,4 @@ abstract class BaseActivity< B : ViewDataBinding>(@LayoutRes private val layoutR
         super.onDestroy()
         ctx = null
     }
-    
-
-
 }
